@@ -237,7 +237,7 @@ class Rogue(Player):
         Create a rogue with appropriate stats.
         Rogues should have: medium health, medium strength, medium magic
         """
-        
+        Player.__init__(self,name, "Rogue", 90, 12, 10)
         # TODO: Call super().__init__() with rogue-appropriate stats
         # Suggested stats: health=90, strength=12, magic=10
         pass
@@ -250,7 +250,15 @@ class Rogue(Player):
         # TODO: Implement rogue attack
         # Could add a chance for critical hit (double damage)
         # Hint: use random.randint(1, 10) and if result <= 3, it's a crit
-        
+        ex_dam=random.randrange(1,10)
+        damage_tar=0
+        if ex_dam<=3:
+            print("CIRITCAL HIT")
+            damage_tar=ex_dam+15
+        else:
+           damage_tar=ex_dam
+           target.take_damage(damage_tar)
+
         pass
         
     def sneak_attack(self, target):
@@ -259,7 +267,10 @@ class Rogue(Player):
         """
         # TODO: Implement sneak attack
         # Should always do critical damage
-        
+        bonus=0
+        bonus+=20
+        target.take_damage(bonus)
+
         
         pass
 
