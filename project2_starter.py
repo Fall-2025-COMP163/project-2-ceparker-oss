@@ -285,7 +285,9 @@ class Weapon:
         Create a weapon with a name and damage bonus.
         """
         # TODO: Store weapon name and damage bonus
-        
+        self.name=name
+        self.damage_bonus=damage_bonus
+
         pass
         
     def display_info(self):
@@ -293,7 +295,7 @@ class Weapon:
         Display information about this weapon.
         """
         # TODO: Print weapon name and damage bonus
-        
+        print(f'{self.name} has a bonus of {self.damage_bonus}')
         pass
 
 # ============================================================================
