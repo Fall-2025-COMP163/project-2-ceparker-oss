@@ -176,7 +176,7 @@ class Warrior(Player):
         # TODO: Implement power strike
         # Should do significantly more damage than regular attack
         bonus=0
-        bonus+=15
+        bonus+=25
         
         target.take_damage(bonus)
         pass
@@ -260,14 +260,9 @@ class Rogue(Player):
         """
         # TODO: Implement sneak attack
         # Should always do critical damage
-        sneak=random.randrange(0,2)
-        bonus=0
-        if sneak==0:
-            print("missed!")
-            bonus+=0
-        else:
-            bonus+=10
         
+        bonus=0
+        bonus+=20
         target.take_damage(bonus)
         pass
 
