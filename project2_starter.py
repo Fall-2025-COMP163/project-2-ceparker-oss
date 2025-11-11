@@ -94,6 +94,8 @@ class Character:
         # Reduce self.health by damage amount
         if self.health>0:
             self.health-=damage
+        if self.health<=0:
+            self.health=0
         # Make sure health doesn't go below 0
         pass
         
@@ -286,7 +288,7 @@ class Weapon:
         Display information about this weapon.
         """
         # TODO: Print weapon name and damage bonus
-        print(f'{self.name} has a bonus of {self.bonus}')
+        print(f'{self.name} has a bonus of {self.damage_bonus}')
         pass
 
 # ============================================================================
