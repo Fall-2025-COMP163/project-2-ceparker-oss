@@ -154,7 +154,7 @@ class Warrior(Player):
         Warriors should have: high health, high strength, low magic
         """
         # TODO: Call super().__init__() with warrior-appropriate stats
-        
+        Player.__init__(self,name, "Warrior", 120, 15, 5)
         # Suggested stats: health=120, strength=15, magic=5
         
         pass
@@ -167,9 +167,10 @@ class Warrior(Player):
         # TODO: Implement warrior attack
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
-        
-        
-        
+        damage_tar=0
+      
+        damage_tar=self.strength+5
+        target.take_damage(damage_tar)  
         pass
         
     def power_strike(self, target):
@@ -178,7 +179,11 @@ class Warrior(Player):
         """
         # TODO: Implement power strike
         # Should do significantly more damage than regular attack
-        
+        bonus=0
+        bonus+=25
+      
+        target.take_damage(bonus)
+
         pass
 
 class Mage(Player):
