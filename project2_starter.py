@@ -195,7 +195,7 @@ class Mage(Player):
         Mages should have: low health, low strength, high magic
         """
         # TODO: Call super().__init__() with mage-appropriate stats
-        Player.__init__(self,name, "Mage", 80, 80, 20)
+        Player.__init__(self,name, "Mage", 80, 8, 20)
         # Suggested stats: health=80, strength=8, magic=20
         pass
         
