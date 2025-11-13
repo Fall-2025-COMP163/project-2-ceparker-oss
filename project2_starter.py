@@ -52,7 +52,12 @@ class SimpleBattle:
 # ============================================================================
 # YOUR CLASSES TO IMPLEMENT (6 CLASSES TOTAL)
 # ============================================================================
-
+#Class 1: Character Class is the first class,
+# created to create the INITIAL(_init_) attributes for each character(Name,Health,Strength,Magic)
+#Attack calculates the damage taken for one character by another based on their strength
+#take_damage is called in attack to "take the damage" from the target parameter
+#The target parameter calls another class character and reduces their health accordingly
+# Display_Stats allows you to diplay (using print) your created atributes 
 class Character:
     """
     Base class for all characters.
@@ -107,6 +112,13 @@ class Character:
         # Make it look nice with formatting
         print(f"{self.name} has {self.health} health and a strength of {self.strength} and {self.magic} magic")
         pass
+#Class 2: Player Class is the first class,
+#This is a derived class, meaning it received attributes from the Base class: Character
+#When initializing, you can access the character's attributes along with the newly created ones (class and level)
+#allowing you to display said stats
+#using the display_stats method needs you to display your past
+#attributes using (Character.display_stats(self)) due to Overriding
+#After you call this, it will also display the new attributes created (class and level)
 
 class Player(Character):
     """
@@ -141,6 +153,17 @@ class Player(Character):
         print(f"With a level of {self.level} and a class of {self.character_class}")
 
         pass
+#Class 3-4-5: These are all derived classes from the player class- Inheritance Tree
+#These classes inherit the methods from Player (meaning Character too)
+#To access all attributes, you must call the player class with you giving all #parameters respected arguments EX: self, name, "Mage", 80, 8, 20
+#How it works: since attributes like self.class are defined, it will see what's called and corresponds
+#to these called arguments (self.class="Mage")
+#Attack is different here as it's another case of overriding the original attack to correspond with new aspects
+#These "aspects” determine how much damage will be taken and given as different characters give different damage!
+#EX: Warriors' damage is based on strength vs the Mage's magic
+#Finally, bonus attacks are apparent with take_damage being used again, but for special moves
+#These special moves give extra damage, with all characters having different versions of the "special attack"
+#EX: Rogues' sneak attack
 
 class Warrior(Player):
     """
@@ -273,7 +296,9 @@ class Rogue(Player):
 
         
         pass
-
+#Final Class(6): Weapon
+#This class is simple, as it's used to store weapons as it creates new attributes (the weapon name and damage bonus)
+# and then displays the name of the weapon and its bonus
 class Weapon:
     """
     Weapon class to demonstrate composition.
