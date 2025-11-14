@@ -161,7 +161,7 @@ Actions:
 display_stats: displays your character's strength, magic, etc.
 Attack: allows you to attack other characters.
 SPECIAL ATTACKS: power_strike,fireball,sneak_attack
-			Warrior           Mage    Rogue 
+			(Warrior           Mage    Rogue). 
 You can also create a class for certain weapons; you can choose sats for them as well. EX: weapon(“Iron Sword”,10), you can display it using display_stats as well
 
 
